@@ -1,0 +1,15 @@
+<ion-view view-title="款姐名片" hide-back-button="true" id="home_view">
+    <ion-content>
+        <ion-list>
+            <div ng-repeat="product in items track by $index" class="row" ng-if="$index % 2 == 0">
+                <ion-item class="col-50" ng-repeat="i in [$index,$index + 1]" ng-if="items[i] != null">
+                    <a ui-sref="makePoster" ng-click="todetail(product)"><img ng-src="{{items[i].imgsrc}}"></a>
+                    <div>
+                        <span>{{items[i].desc}}</span>
+                        <i class="icon ion-star" ng-repeat="i in getNumber(items[i].rating) track by $index"></i>
+                    </div>
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
+</ion-view>

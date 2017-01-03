@@ -1,0 +1,34 @@
+<ion-view view-title="款姐名片" id="makePoster_view">
+    <ion-content>
+        <form name="shippingForm" method="post" action="/subPoster" novalidate>
+            <ion-list>
+                <label class="item item-input item-stacked-label">
+                    <i class="icon ion-person-stalker"></i>
+                    <label>姓名</label>
+                    <input type="text" name="name" class="form-control" ng-model="data.shipping.name" required
+                           placeholder="请输入您的姓名">
+                    <strong class="error"
+                            ng-show="shippingForm.name.$error.required && shippingForm.name.$dirty">请输入姓名</strong>
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <i class="icon ion-ios-telephone"></i>
+                    <label>手机</label>
+                    <input type="text" name="phone" class="form-control" ng-model="data.shipping.phone" required
+                           placeholder="请输入您的手机">
+                    <strong class="error"
+                            ng-show="shippingForm.phone.$error.required && shippingForm.phone.$dirty">请输入手机</strong>
+                </label>
+            </ion-list>
+            <ion-list>
+                <h5>选择类型</h5>
+                <ion-radio ng-model="choice" ng-value="'A'">贷款</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'B'">理财</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'C'">保险</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'D'">地产</ion-radio>
+            </ion-list>
+            <button class="button button-full button-royal" ng-disabled="shippingForm.$invalid" ui-sref="subPoster" ng-click="getid()">
+                点击生成海报
+            </button>
+        </form>
+    </ion-content>
+</ion-view>

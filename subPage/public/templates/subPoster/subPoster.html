@@ -1,0 +1,18 @@
+<ion-view view-title="款姐名片" id="subPoster_view">
+    <ion-content>
+        <div class="card">
+            <div class="item item-image">
+                <img ng-src="{{items[imgIndex].imgsrc}}">
+            </div>
+            <div ng-repeat="user in users">
+                <span>{{user.name}}</span>
+                <span>{{user.tel}}</span>
+                <span>{{user.addr}}</span>
+            </div>
+            <strong class="item item-icon-left royal">
+                <i class="icon ion-alert"></i>
+                长按图片保存哟~
+            </strong>
+        </div>
+    </ion-content>
+</ion-view>
